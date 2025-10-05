@@ -8,58 +8,73 @@
 </head>
 
 <body>
+    <!-- Formulario de registro -->
     <form id="register-form">
         <h2>Register</h2>
+
+        <!-- Campo de nombre de usuario -->
         <label for="register-username">Username:</label>
         <input type="text" id="register-username" name="username" required>
 
+        <!-- Campo de contraseña -->
         <label for="register-password">Password</label>
         <input type="password" id="register-password" name="password" required>
 
-        <label for="register-confirm-password">Password</label>
+        <!-- Campo para confirmar la contraseña -->
+        <label for="register-confirm-password">Confirm Password</label>
         <input type="password" id="register-confirm-password" name="confirm-password" required>
 
+        <!-- Botón para enviar -->
         <button type="submit">Register</button>
+
+        <!-- Span donde se mostrará el mensaje de éxito o error -->
         <span>&nbsp;</span>
     </form>
 
     <script>
+        // Función auxiliar para obtener elementos fácilmente
         const $ = el => document.querySelector(el);
 
+        // Seleccionamos el formulario y el span de mensaje
         const registerForm = $('#register-form')
         const registerSpan = $('#register-form span')
 
+        // Escuchamos el evento de "submit" (cuando el usuario intenta enviar el formulario)
         registerForm?.addEventListener('submit', e => {
-            e.preventDefault()
+            e.preventDefault() // Evita que se recargue la página
+
+            // Obtenemos los valores de los campos del formulario
             const username = $('#register-username').value
             const password = $('#register-password').value
             const confimrpassword = $('#register-confirm-password').value
 
+            // Comprobamos si las contraseñas coinciden
             if (password != confimrpassword) {
                 alert('Passwords do not match')
-                return
+                return // Si no coinciden, salimos sin enviar los datos
             }
+
+            // Enviamos los datos al servidor con fetch (POST /register)
             fetch('/register', {
-                method: 'POST',
+                method: 'POST', // Método HTTP
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json' // Indicamos que enviamos JSON
                 },
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ username, password }) // Enviamos los datos como JSON
             })
-                .then(res => {
-                    console.log(res)
-                    if (res.ok) {
-                        registerSpan.innerText = 'Usuario registrado. ..Entrando..'
-                        registerSpan.style.color = 'green'
-
-                    } else {
-                        registerSpan.innerText = 'Error al registrar usuari'
-                        registerSpan.style.color = 'red'
-                    }
-                });
+            .then(res => {
+                console.log(res) // Mostramos la respuesta en consola 
+                if (res.ok) {
+                    // Si el servidor respondió correctamente (código 200 o 201)
+                    registerSpan.innerText = 'Usuario registrado. ..Entrando..'
+                    registerSpan.style.color = 'green'
+                } else {
+                    // Si hubo un error en el registro
+                    registerSpan.innerText = 'Error al registrar usuario'
+                    registerSpan.style.color = 'red'
+                }
+            });
         });
-
     </script>
 </body>
-
 </html>

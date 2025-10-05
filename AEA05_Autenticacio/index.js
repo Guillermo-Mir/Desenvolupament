@@ -1,25 +1,31 @@
 import express from "express";
 import { PORT, SECRET_JWT_KEY } from "./config.js";
 
-const app = express(); //crear el servidor
+const app = express(); // crear el servidor
 
-app.use(express.json());
-app.use(express.static("public"));// Carrega css
+// Middlewares
+app.use(express.json()); // permite que el servidor reciba JSON desde el frontend
+app.use(express.static("public")); // Carrega css (y otros archivos estáticos como JS, imágenes)
 
-app.set('view engine', 'ejs'); //Motor de plantillas
-app.set('views', './views')
+// Configuración de motor de plantillas
+app.set('view engine', 'ejs'); // Motor de plantillas
+app.set('views', './views');   // Carpeta donde están las vistas
 
-app.listen(PORT, () => console.log(`Server runnig on port ${PORT}`))
+// Inicia el servidor
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-//Inici dels endpoints
+// --- Inici dels endpoints --- //
 
+// Ruta principal, renderiza la vista 'register'
 app.get('/', (req, res) => {
-    // const { user } = req.session
-    res.render('register')
+    // const { user } = req.session   // ejemplo de cómo se usaría una sesión
+    res.render('register'); // renderiza el formulario de registro
 });
+
+// Endpoint para registrar usuarios
 app.post('/register', (req, res) => {
-   const {username, password} = req.body; //desestructurar del body lo que queremos usar
-   
-})
+    const { username, password } = req.body; // desestructurar del body lo que queremos usar
+
+});
 
 
