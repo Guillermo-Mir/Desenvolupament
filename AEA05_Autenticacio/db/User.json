@@ -1,5 +1,10 @@
 [
     {
+        "_id": "20cbed35-1fac-435d-a56b-44780a642579",
+        "username": "MARC",
+        "password": "$2b$10$FoRqwszUHlH/GEw20IYvX.k4I6pQiDa.EyHmqDsuxoB7V4198oCSa"
+    },
+    {
         "_id": "4c292fe8-be49-47e5-8497-b953515ffcee",
         "username": "hola",
         "password": "$2b$10$HzOScQOjVBpw4RZcTknoxuLsphrdoPLdLSmaivaj3F0AyPWF57CO."
