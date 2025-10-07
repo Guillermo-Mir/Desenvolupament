@@ -29,7 +29,7 @@ app.post('/register', async (req, res) => { // Hacer async para poder usar await
     console.log(req.body)
     try {
         const id = await UserRepository.create({ username, password }); // await para la creación del usuario
-        res.send(`Usuario creado con ID: ${id}`); // respuesta de éxito
+        res.send(id); // respuesta de éxito
     } catch (error) {
         console.error(error);
         res.status(400).send({ error: error.message }); // enviar mensaje de error al cliente
