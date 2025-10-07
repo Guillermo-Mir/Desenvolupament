@@ -1,5 +1,6 @@
 import express from "express";
 import { PORT, SECRET_JWT_KEY } from "./config.js";
+import { useImperativeHandle } from "react";
 
 const app = express(); // crear el servidor
 
@@ -25,7 +26,12 @@ app.get('/', (req, res) => {
 // Endpoint para registrar usuarios
 app.post('/register', (req, res) => {
     const { username, password } = req.body; // desestructurar del body lo que queremos usar
+    console.log(req.body)
+    try{
+        //const id = await UserRepository.create({username,password}); 
+    }catch (error){
 
+    };
 });
 
 
