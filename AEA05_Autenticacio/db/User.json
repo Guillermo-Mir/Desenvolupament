@@ -1,3 +1,12 @@
 [
-    
+    {
+        "_id": "4c292fe8-be49-47e5-8497-b953515ffcee",
+        "username": "hola",
+        "password": "$2b$10$HzOScQOjVBpw4RZcTknoxuLsphrdoPLdLSmaivaj3F0AyPWF57CO."
+    },
+    {
+        "_id": "2666eea4-1ebc-48ac-9299-45b7421593ac",
+        "username": "Paco",
+        "password": "$2b$10$PUuJoY1EhK8bKmnwnsEBXOioElDPBvdo72BMzShFp8XmQx83cnMxi"
+    }
 ]
