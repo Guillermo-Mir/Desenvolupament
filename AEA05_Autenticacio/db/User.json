@@ -1,5 +1,10 @@
 [
     {
+        "_id": "a7a94e03-5e8d-48a6-ae33-0ab3d9afea61",
+        "username": "Chiken Little",
+        "password": "$2b$10$8k/6EYTx30.75.Q.ZSY0e.XPE/1XoVCDlCPLLPVxDfyenYb2OtfFq"
+    },
+    {
         "_id": "cec8b356-fbed-448d-9afa-b8bf9b3a7653",
         "username": "adsasdas",
         "password": "$2b$10$Am.EBTfh/3b3hRMqLoQz8e/MVGXNiUqhFkJaa6SkEHov9LigVkdQS"

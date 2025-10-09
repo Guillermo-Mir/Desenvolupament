@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/js/styles.css">
-    <script src="/js/register.js" defer></script>
+    <script src="./js/register.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -33,6 +33,7 @@
         <span>&nbsp;</span>
     </form>
 
+    
     <script>
         // Función auxiliar para obtener elementos fácilmente
         const $ = el => document.querySelector(el);
@@ -69,7 +70,11 @@
                 if (res.ok) {
                     // Si el servidor respondió correctamente (código 200 o 201)
                     registerSpan.innerText = 'Usuario registrado. ..Entrando..'
-                    registerSpan.style.color = 'green'
+                          registerSpan.style.color = 'green'
+                    registerSpan.clasList.add("success");
+                    setTimeout(() => {
+                        window.location.href = '/protected'
+                    }, 2000);
                 } else {
                     // Si hubo un error en el registro
                     registerSpan.innerText = 'Error al registrar usuario'
