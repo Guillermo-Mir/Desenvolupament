@@ -1,11 +1,13 @@
 import express from "express";
 import { PORT, SECRET_JWT_KEY } from "./config.js";
 import { UserRepository } from "./user-repository.js";
+import cookieParser from "cookie-parser";
 
 const app = express(); // crear el servidor
 
 // Middlewares
 app.use(express.json()); // permite que el servidor reciba JSON desde el frontend
+app.use(cookieParser()) // habilita el manejo de cookies en el servidor
 app.use(express.static("public")); // Carrega css (y otros archivos estáticos como JS, imágenes)
 
 // Configuración de motor de plantillas
@@ -18,6 +20,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 // --- Inici dels endpoints --- //
 
 // Ruta principal, renderiza la vista 'register'
+//app.get('quin punt s'ha sol·licitat', (req, res) => {Quina resposta donare});
 app.get('/', (req, res) => {
     // const { user } = req.session   // ejemplo de cómo se usaría una sesión
     res.render('register'); // renderiza el formulario de registro

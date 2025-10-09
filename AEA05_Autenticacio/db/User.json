@@ -1,17 +1,1 @@
-[
-    {
-        "_id": "20cbed35-1fac-435d-a56b-44780a642579",
-        "username": "MARC",
-        "password": "$2b$10$FoRqwszUHlH/GEw20IYvX.k4I6pQiDa.EyHmqDsuxoB7V4198oCSa"
-    },
-    {
-        "_id": "4c292fe8-be49-47e5-8497-b953515ffcee",
-        "username": "hola",
-        "password": "$2b$10$HzOScQOjVBpw4RZcTknoxuLsphrdoPLdLSmaivaj3F0AyPWF57CO."
-    },
-    {
-        "_id": "2666eea4-1ebc-48ac-9299-45b7421593ac",
-        "username": "Paco",
-        "password": "$2b$10$PUuJoY1EhK8bKmnwnsEBXOioElDPBvdo72BMzShFp8XmQx83cnMxi"
-    }
-]
+[{"_id":"cec8b356-fbed-448d-9afa-b8bf9b3a7653","username":"adsasdas","password":"$2b$10$Am.EBTfh/3b3hRMqLoQz8e/MVGXNiUqhFkJaa6SkEHov9LigVkdQS"},{"_id":"20cbed35-1fac-435d-a56b-44780a642579","username":"MARC","password":"$2b$10$FoRqwszUHlH/GEw20IYvX.k4I6pQiDa.EyHmqDsuxoB7V4198oCSa"},{"_id":"4c292fe8-be49-47e5-8497-b953515ffcee","username":"hola","password":"$2b$10$HzOScQOjVBpw4RZcTknoxuLsphrdoPLdLSmaivaj3F0AyPWF57CO."},{"_id":"2666eea4-1ebc-48ac-9299-45b7421593ac","username":"Paco","password":"$2b$10$PUuJoY1EhK8bKmnwnsEBXOioElDPBvdo72BMzShFp8XmQx83cnMxi"}]
