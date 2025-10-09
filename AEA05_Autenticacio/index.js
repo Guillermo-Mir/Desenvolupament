@@ -45,4 +45,9 @@ app.post('/register', async (req, res) => { // Hacer async para poder usar await
     };
 });
 
+app.post('/login', async(req, res) => {
+    const {username,password} =req.body
+    const user = await UserRepository.login({username,password})
+})
+
 

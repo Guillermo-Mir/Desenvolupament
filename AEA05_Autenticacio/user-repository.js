@@ -45,6 +45,20 @@ export class UserRepository {
     // Método login pendiente de implementación
     static async login({ username, password }) {
         // Aquí se implementaría la lógica de login usando bcryptjs.compare
+     Validation.username(username)
+        Validation.password(password)
+        //2. Asegurarse que el username existe
+        const user=User.findOne({username})
+        // Si no existe error
+        if(!user) throw new Error('username does not exist')
+        //no lo desencripta para compararlo    
+        const isValid=await bcrypt.compare(password,user.password)
+        
+        if (!isValid) throw new Error('password is invalid')
+        //Per no enviar el password copiem tot el contingut menys el password
+        const {password:_,...publicUser}=user
+
+        return publicUser    
     }
 }
 
