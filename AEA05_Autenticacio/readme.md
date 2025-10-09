@@ -1,3 +1,5 @@
+## Explicació
+
 Primero de todo, tratamos de hacer un CRUD a partir de JS gracias a Node. Para iniciar esta actividad, empezamos estructurando nuestro index.js, es decir, haciendo la conexión al servidor y organizando la parte backend de la aplicación, preparando los endpoints que nos permitirán renderizar la vista de register y hacer que el usuario se pueda registrar. Además, para todo esto, primero hemos tenido que asignar los valores por defecto al servidor en config.js. En este mismo archivo, también definimos la clave usada para los JWT y el número de rondas utilizadas para hashear la contraseña.
 
 A continuación, se creó la página de registro, tanto la parte HTML como JS, donde creábamos el formulario y utilizábamos una función auxiliar que hace las cosas más cómodas.
