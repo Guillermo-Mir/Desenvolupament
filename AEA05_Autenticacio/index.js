@@ -26,6 +26,12 @@ app.get('/', (req, res) => {
     res.render('register'); // renderiza el formulario de registro
 });
 
+app.get('/protected', (req, res) => {
+        res.render('protected'); // renderiza el formulario de registro
+});
+
+
+
 // Endpoint para registrar usuarios
 app.post('/register', async (req, res) => { // Hacer async para poder usar await
     const { username, password } = req.body; // desestructurar del body lo que queremos usar
