@@ -1,0 +1,83 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "FrancescLaptop",
+            "price": "999.99",
+            "category": "Electronics"
+        },
+        {
+            "id": 2,
+            "name": "Laptop 2",
+            "price": 999.99,
+            "category": "Electronics"
+        },
+        {
+            "id": 3,
+            "name": "Gaming Laptop",
+            "price": 1199.99,
+            "category": "Electronics"
+        },
+        {
+            "id": 4,
+            "name": "Laptop 4",
+            "price": 999.99,
+            "category": "Electronics"
+        }
+    ],
+    "books": [
+        {
+            "id": 1,
+            "name": "Los 7 hábitos de la gente altamente efectiva",
+            "author": "Stephen R. Covey",
+            "year": 1989
+        },
+        {
+            "id": 2,
+            "name": "Padre rico, padre pobre",
+            "author": "Robert Kiyosaki",
+            "year": 1997
+        }
+        
+    ],
+    "pokemons":[
+        {
+            "id": 1,
+            "name": "Bulbasaur",
+            "type": "Planta/Veneno",
+            "generation": 1
+        },
+        {
+            "id": 2,
+            "name": "Charmander",
+            "type": "Fuego",
+            "generation": 1
+        },
+        {
+            "id": 3,
+            "name": "Squirtle",
+            "type": "Agua",
+            "generation": 1
+        }
+    ],
+    "videogames": [
+        {
+            "id": 1,
+            "name": "Outer Wilds",
+            "type": "Aventura / Exploración",
+            "creator": "Mobius Digital"
+        },
+        {
+            "id": 2,
+            "name": "Death Stranding 2",
+            "type": "Acción / Aventura",
+            "creator": "Kojima Productions"
+        },
+        {
+            "id": 3,
+            "name": "Cyberpunk 2077",
+            "type": "RPG / Mundo abierto",
+            "creator": "CD Projekt Red"
+        }
+    ]
+}
