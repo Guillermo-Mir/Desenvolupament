@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Gestió de Pokemons per <%= user.name %>!</h1>
+        <h1>Gestió de Pokemons per<%= user.name %>!</h1>
         <h2><%- htmlMessage %></h2>
     </header>
     <main>
@@ -20,6 +21,8 @@
                         <strong><%= pokemon.name %></strong>
                         <span>Type: <%= pokemon.type %></span>
                         <span>Generation: <%= pokemon.generation %></span>
+                        <span><a href="/pokemons/<%=pokemon.id %>">Detall pokemon</a></span>
+                        <span><a href="/pokemons/edit_pokemon/<%=pokemon.id %>">Editar pokemon</a></span>
                     </li>
                 <% }) %>
             </ul>

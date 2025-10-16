@@ -1,91 +1,115 @@
-/* General */
+/* === General === */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f7f8fa; /* fondo neutro */
     color: #333;
     line-height: 1.6;
 }
 
-/* Header */
+/* === Header === */
 header {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #f16c62, #f16c62); /* degradado suave y personal */
     color: white;
-    padding: 10px;
+    padding: 20px 10px;
     text-align: center;
-    border-radius: 5px;
-}
-p {
-    color:black;
-}
-header h1 {
-    margin: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Main content */
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* === Main content === */
 main {
-    padding: 20px;
-    max-width: 800px;
+    padding: 30px 20px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-/* Llistat amb estil pijama */
+/* === Lista de productos estilo tarjeta === */
 .product-list {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .product-item {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.product-item:nth-child(odd) {
-    background-color: #f4f4f4; /* Color per a les línies imparells */
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.product-item:nth-child(even) {
-    background-color: #e8e8e8; /* Color per a les línies parells */
+/* Nombre del producto */
+.product-item h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #f16c62;
 }
 
-
-/* Form */
+/* === Formulario moderno === */
 .product-form {
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-top: 30px;
 }
 
 .product-form label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
 }
 
 .product-form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 12px;
+    margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+.product-form input:focus {
+    border-color: #f16c62;
+    box-shadow: 0 0 5px rgba(255,117,140,0.3);
+    outline: none;
+}
+
+/* Botón con toque personal */
 .product-form button {
-    background-color: #0078d7;
+    background-color: #f16c62;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 12px;
     cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
 .product-form button:hover {
-    background-color: #005bb5;
+    background-color: #f16c62;
+    transform: translateY(-2px);
 }

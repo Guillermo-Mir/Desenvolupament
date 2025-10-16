@@ -1,6 +1,4 @@
 import express from 'express';
-import productRoutes from './routes/products.js';
-import bookRoutes from './routes/books.js';
 import pokemonRoutes from './routes/pokemons.js';
 import videogameRoutes from './routes/videogames.js';
 import methodOverride from 'method-override';
@@ -32,8 +30,7 @@ app.use((req,res,next)=>{
     next() 
 })
 
-app.use('/products', productRoutes);
-app.use('/books', bookRoutes);
+
 app.use('/pokemons', pokemonRoutes);
 app.use('/videogames', videogameRoutes);
 
