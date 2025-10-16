@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
                          <a href="/">Home</a>`;
     res.render("pokemon", { user, data, htmlMessage });
 });
+
 router.get('/edit_pokemon/:id', (req, res) => {
     const user = { name: "Guillermo" };
     const htmlMessage = `
@@ -20,11 +21,11 @@ router.get('/edit_pokemon/:id', (req, res) => {
     <a href="/products">Llistat de productes</a>`;
     
     const data = readData();
-    const product = data.products.find(p => p.id === parseInt(req.params.id));
+    const pokemon = data.pokemons.find(p => p.id === parseInt(req.params.id));
     
-    if (!product) return res.status(404).send('Product not found');
+    if (!pokemon) return res.status(404).send('Pokemon not found');
 
-    res.render("edit_product", { user, product, htmlMessage });
+    res.render("edit_pokemon", { user, pokemon, htmlMessage });
 });
 
 router.get('/:id', (req, res) => {
