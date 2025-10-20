@@ -62,7 +62,8 @@ router.delete('/:id', (req, res) => {
     if (pokemonIndex === -1) return res.status(404).send('Pokemon not found');
     data.pokemons.splice(pokemonIndex, 1);
     writeData(data);
-    res.json({ message: "Pokemon deleted successfully" });
+    res.redirect("/pokemons")
+    //res.json({ message: "Pokemon deleted successfully" });
 });
 
 export default router;

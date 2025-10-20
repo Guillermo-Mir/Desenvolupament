@@ -23,6 +23,12 @@
                         <span>Generation: <%= pokemon.generation %></span>
                         <span><a href="/pokemons/<%=pokemon.id %>">Detall pokemon</a></span>
                         <span><a href="/pokemons/edit_pokemon/<%=pokemon.id %>">Editar pokemon</a></span>
+                        <form action="/pokemons/<%= pokemon.id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit"
+                                onclick="return confirm('Estàs segur que vols eliminar <%= pokemon.name %>?');">
+                                Eliminar
+                            </button>
+                        </form>
                     </li>
                 <% }) %>
             </ul>
