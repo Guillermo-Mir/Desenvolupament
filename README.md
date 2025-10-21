@@ -15,5 +15,5 @@ Aquest repositori conté una aplicació web funcional per gestionar **videogames
 - `.gitignore` - Fitxer per excloure contingut del control de versions.
 
 ## Funcionament
-El servidor Express s’encarrega de renderitzar les vistes EJS, gestionar les rutes CRUD per a Pokémons i Videojocs, i autenticar els usuaris a través del fitxer User.json. Totes les dades es desen i es consulten des de fitxers JSON locals, sense dependència d’una base de dades externa.
+- El servidor Express renderitza les vistes EJS, gestiona les rutes CRUD per a Pokémons i Videojocs, i valida els usuaris mitjançant el fitxer User.json. Les dades es guarden i llegeixen de fitxers JSON locals sense necessitat de base de dades externa.
 ---
