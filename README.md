@@ -1,11 +1,13 @@
-## Explicació
+Aquest repositori conté una aplicació web funcional per gestionar **videogames** i **Pokémon**, amb dades d'exemple en fitxers `.json`.
 
-Primero de todo, tratamos de hacer un CRUD a partir de JS gracias a Node. Para iniciar esta actividad, empezamos estructurando nuestro index.js, es decir, haciendo la conexión al servidor y organizando la parte backend de la aplicación, preparando los endpoints que nos permitirán renderizar la vista de register y hacer que el usuario se pueda registrar. Además, para todo esto, primero hemos tenido que asignar los valores por defecto al servidor en config.js. En este mismo archivo, también definimos la clave usada para los JWT y el número de rondas utilizadas para hashear la contraseña.
+---
 
-A continuación, se creó la página de registro, tanto la parte HTML como JS, donde creábamos el formulario y utilizábamos una función auxiliar que hace las cosas más cómodas.
-Posteriormente, comenzamos escuchando el evento submit cuando el usuario intenta enviar el formulario, y comprobamos los campos para, finalmente, enviar los datos al servidor y guardarlos en una base de datos.
+## Contingut del repositori
 
-Para ello, se creó user-repository.js, donde establecemos la conexión con la base de datos y definimos un esquema para los datos especificados.
-En este archivo, tuvimos que crear una clase llamada UserRepository, donde validamos los campos (gracias a la clase Validation), nos aseguramos de que el username no esté repetido (en caso de que lo esté, salta un error), y creamos un ID para cada usuario (aunque sería mejor que lo generase la base de datos). Finalmente, esta clase finaliza hasheando la contraseña y creando el usuario, que será guardado en User.json.
+- `server.js` - Servidor Node.js amb Express.
+- `routes/` - Rutes per a Videogames i Pokémon.
+- `views/` - Plantilles EJS per mostrar les dades.
+- `public/` - Fitxers CSS i assets.
+- `data/` - Fitxers JSON amb dades d’exemple (`videogames.json`, `pokemons.json`).
 
-Donde de momento hemos conseguido que los usuarios se guarden de manera correcta.
+---
