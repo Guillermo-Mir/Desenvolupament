@@ -14,6 +14,25 @@ router.get('/', (req, res) => {
     res.render("videogame", { user, data, htmlMessage });
 });
 
+
+router.get('/edit_videogame/:id', (req, res) => {
+    const user = { name: "Guillermo" };
+    const htmlMessage = `
+    <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
+    <a href="/products">Llistat de productes</a>`;
+    
+    const data = readData();
+    const videogame = data.videogames.find(p => p.id === parseInt(req.params.id));
+    
+    if (!videogame) return res.status(404).send('Videogame not found');
+
+    res.render("edit_videogame", { user, videogame, htmlMessage });
+});
+
+router.get('/create',(req, res) => {
+    res.render("create_videogame"); 
+});
+
 router.get('/:id', (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
@@ -22,13 +41,22 @@ router.get('/:id', (req, res) => {
     res.json(videogame);
 });
 
-router.post('/', (req, res) => {
-    const data = readData();
-    const body = req.body;
-    const newVideogame = { id: data.videogames.length + 1, ...body };
+router.post('/createVideogame/', (req, res) => {
+ const data = readData();
+    const { name, type, creator } = req.body; 
+    
+    if (!name || !type || !creator) return res.status(400).send('Falten camps obligatoris');
+    
+    const newVideogame = { 
+        id: data.videogames.length + 1, 
+        name, 
+        type, 
+        creator,
+    };
+    
     data.videogames.push(newVideogame);
     writeData(data);
-    res.json(newVideogame);
+    res.redirect('/videogames');
 });
 
 router.put('/:id', (req, res) => {

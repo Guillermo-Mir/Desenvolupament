@@ -16,6 +16,7 @@
     <main>
         <section>
             <h2>Llista de Videogames</h2>
+            <span><a href="/videogames/create">Crear Videogame</a></span>
             <ul class="product-list">
                 <% data.videogames.forEach(videogame=> { %>
                     <li class="product-item">
@@ -25,7 +26,13 @@
                         <span>Type: <%= videogame.type %></span>
                         <span>Creator: <%= videogame.creator %></span>
                         <span><a href="/videogames/<%=videogame.id %>">Detall videogame</a></span>
-                        <span><a href="/videogames/editvideogame/<%=videogame.id %>">Editar videogame</a></span>
+                        <span><a href="/videogames/edit_videogame/<%=videogame.id %>">Editar videogame</a></span>
+                        <form action="/videogames/<%= videogame.id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit"
+                                onclick="return confirm('Estàs segur que vols eliminar <%= videogame.name %>?');">
+                                Eliminar
+                            </button>
+                        </form>
                     </li>
                     <% }) %>
             </ul>

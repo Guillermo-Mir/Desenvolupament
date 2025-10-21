@@ -6,6 +6,7 @@ const router = express.Router();
 const readData = () => JSON.parse(fs.readFileSync('./db/db.json'));
 const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data));
 
+
 router.get('/', (req, res) => {
     const data = readData();
     const user = { name: "Guillermo" };
@@ -13,6 +14,7 @@ router.get('/', (req, res) => {
                          <a href="/">Home</a>`;
     res.render("pokemon", { user, data, htmlMessage });
 });
+
 
 router.get('/edit_pokemon/:id', (req, res) => {
     const user = { name: "Guillermo" };
@@ -28,6 +30,10 @@ router.get('/edit_pokemon/:id', (req, res) => {
     res.render("edit_pokemon", { user, pokemon, htmlMessage });
 });
 
+router.get('/create',(req, res) => {
+    res.render("create_pokemon"); 
+});
+
 router.get('/:id', (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
@@ -36,7 +42,9 @@ router.get('/:id', (req, res) => {
     res.json(pokemon);
 });
 
-router.post('/', (req, res) => {
+
+
+router.post('/createPokemon/', (req, res) => {
      const data = readData();
     const { name, type, generation } = req.body; 
     
@@ -53,6 +61,7 @@ router.post('/', (req, res) => {
     writeData(data);
     res.redirect('/pokemons');
 });
+
 
 router.put('/:id', (req, res) => {
     const data = readData();
