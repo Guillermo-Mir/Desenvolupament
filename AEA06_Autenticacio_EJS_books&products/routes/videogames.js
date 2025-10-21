@@ -34,11 +34,15 @@ router.get('/create',(req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+    const user = { name: "Guillermo" };
+    const htmlMessage = `
+    <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
+    <a href="/products">Llistat de productes</a>`;
     const data = readData();
     const id = parseInt(req.params.id);
     const videogame = data.videogames.find(v => v.id === id);
     if (!videogame) return res.status(404).send('Videogame not found');
-    res.json(videogame);
+    res.render("detall_videogame", { user, videogame, htmlMessage });
 });
 
 router.post('/createVideogame/', (req, res) => {
@@ -66,7 +70,7 @@ router.put('/:id', (req, res) => {
     if (videogameIndex === -1) return res.status(404).send('Videogame not found');
     data.videogames[videogameIndex] = { ...data.videogames[videogameIndex], ...req.body };
     writeData(data);
-    res.json({ message: "Videogame updated successfully" });
+    //res.json({ message: "Videogame updated successfully" });
 });
 
 router.delete('/:id', (req, res) => {
@@ -76,7 +80,8 @@ router.delete('/:id', (req, res) => {
     if (videogameIndex === -1) return res.status(404).send('Videogame not found');
     data.videogames.splice(videogameIndex, 1);
     writeData(data);
-    res.json({ message: "Videogame deleted successfully" });
+    res.redirect('/videogames')
+    //res.json({ message: "Videogame deleted successfully" });
 });
 
 export default router;

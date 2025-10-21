@@ -3,113 +3,103 @@ body {
     font-family: "Poppins", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f8fa; /* fondo neutro */
+    background: #f0f2f5; /* fondo más limpio */
     color: #333;
     line-height: 1.6;
 }
 
-/* === Header === */
+/* === Header opcional === */
 header {
-    background: linear-gradient(135deg, #f16c62, #f16c62); /* degradado suave y personal */
+    background: linear-gradient(135deg, #ff7b6b, #ff5a5f);
     color: white;
-    padding: 20px 10px;
+    padding: 25px 10px;
     text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
     letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 /* === Main content === */
-main {
-    padding: 30px 20px;
-    max-width: 900px;
+.main-container {
+    padding: 40px 20px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* === Lista de productos estilo tarjeta === */
-.product-list {
+/* === Lista de ítems estilo tarjeta === */
+.item-list ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
 
-.product-item {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+/* Tarjeta de cada ítem */
+.card {
+    background: linear-gradient(145deg, #ffffff, #f9fafc);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s, box-shadow 0.2s;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #e0e4e8;
 }
 
-.product-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* Nombre del producto */
-.product-item h2 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #f16c62;
-}
-
-/* === Formulario moderno === */
-.product-form {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid #eee;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    margin-top: 30px;
-}
-
-.product-form label {
-    display: block;
-    margin-bottom: 8px;
+/* Nombre del ítem */
+.item-name {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #ff5a5f;
     font-weight: 600;
+}
+
+/* Tipo y creador/generación */
+.item-type,
+.item-creator {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.item-type strong,
+.item-creator strong {
     color: #333;
 }
 
-.product-form input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.product-form input:focus {
-    border-color: #f16c62;
-    box-shadow: 0 0 5px rgba(255,117,140,0.3);
-    outline: none;
-}
-
-/* Botón con toque personal */
-.product-form button {
-    background-color: #f16c62;
-    color: white;
-    border: none;
-    padding: 12px 20px;
+/* Opcional: resaltar tipo con color de fondo */
+.item-type {
+    display: inline-block;
+    padding: 5px 10px;
     border-radius: 12px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.2s, transform 0.1s;
+    background-color: #ffe5e2;
+    font-weight: 500;
+    margin-bottom: 8px;
 }
 
-.product-form button:hover {
-    background-color: #f16c62;
-    transform: translateY(-2px);
+.item-creator {
+    font-style: italic;
+}
+
+/* === Responsive === */
+@media (max-width: 650px) {
+    .item-list ul {
+        grid-template-columns: 1fr;
+    }
 }

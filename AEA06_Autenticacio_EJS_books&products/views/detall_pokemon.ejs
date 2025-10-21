@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon</title>
+    <link rel="stylesheet" href="/detall.css">
+</head>
+
+<body>
+    <header>
+        <h1>Pokémon</h1>
+        <a href="/pokemons">Tornar al llistat</a>
+    </header>
+    <main class="main-container">
+        <section class="item-list">
+            <ul>
+                <li class="item">
+                    <article class="card">
+                        <h2 class="item-name">
+                            <%= pokemon.name %>
+                        </h2>
+                        <p class="item-type"><strong>Tipus:</strong>
+                            <%= pokemon.type %>
+                        </p>
+                        <p class="item-creator"><strong>Generació:</strong>
+                            <%= pokemon.generation %>
+                        </p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
