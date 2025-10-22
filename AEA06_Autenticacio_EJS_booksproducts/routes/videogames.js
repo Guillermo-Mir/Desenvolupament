@@ -9,17 +9,14 @@ const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data
 router.get('/', (req, res) => {
     const data = readData();
     const user = { name: "Guillermo" };
-    const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-                         <a href="/">Home</a>`;
+    const htmlMessage = `<a href="/">Home</a>`;
     res.render("videogame", { user, data, htmlMessage });
 });
 
 
 router.get('/edit_videogame/:id', (req, res) => {
     const user = { name: "Guillermo" };
-    const htmlMessage = `
-    <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-    <a href="/products">Llistat de productes</a>`;
+    const htmlMessage = `<a href="/">Home</a>`;
     
     const data = readData();
     const videogame = data.videogames.find(p => p.id === parseInt(req.params.id));
@@ -35,9 +32,7 @@ router.get('/create',(req, res) => {
 
 router.get('/:id', (req, res) => {
     const user = { name: "Guillermo" };
-    const htmlMessage = `
-    <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-    <a href="/products">Llistat de productes</a>`;
+    const htmlMessage = `<a href="/">Home</a>`;
     const data = readData();
     const id = parseInt(req.params.id);
     const videogame = data.videogames.find(v => v.id === id);

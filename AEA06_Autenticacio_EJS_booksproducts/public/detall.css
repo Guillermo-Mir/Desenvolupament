@@ -1,38 +1,35 @@
-/* === General === */
 body {
     font-family: "Poppins", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f8fa;
+    background-color: #f5f7fa;
     color: #333;
     line-height: 1.6;
 }
 
-/* === Header opcional === */
 header {
-    background: linear-gradient(135deg, #f16c62, #f16c62);
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
     color: white;
-    padding: 20px 10px;
+    padding: 30px 15px;
     text-align: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 header h1 {
     margin: 0;
     font-size: 2rem;
     letter-spacing: 1px;
+    line-height: 1.2;
 }
 
-/* === Main content === */
 .main-container {
     padding: 30px 20px;
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* === Lista de ítems estilo tarjeta === */
 .item-list ul {
     list-style: none;
     padding: 0;
@@ -42,7 +39,6 @@ header h1 {
     gap: 20px;
 }
 
-/* Tarjeta de cada ítem */
 .card {
     background-color: #ffffff;
     border-radius: 15px;
@@ -59,14 +55,12 @@ header h1 {
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* Nombre del ítem */
 .item-name {
     font-size: 1.3rem;
     margin-bottom: 10px;
-    color: #f16c62;
+    color: #4facfe;
 }
 
-/* Tipo y creador/generación */
 .item-type,
 .item-creator {
     font-size: 1rem;
@@ -79,7 +73,6 @@ header h1 {
     color: #333;
 }
 
-/* === Responsive === */
 @media (max-width: 600px) {
     .item-list ul {
         grid-template-columns: 1fr;

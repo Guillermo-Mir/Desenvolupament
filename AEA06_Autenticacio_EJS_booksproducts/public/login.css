@@ -1,46 +1,38 @@
 @media (max-width: 768px) {
-
-    /* Per a pantalles petites */
     .form-container h2 {
         font-size: 1.2em;
-        /* Redueix la mida de la lletra */
         margin-bottom: 10px;
     }
 
     label {
         display: block;
-        /* Assegura't que els labels es mostren */
         margin-bottom: 5px;
     }
 
     input {
         width: 100%;
-        /* Inputs ocupen tot l'ample del contenidor */
     }
 }
 
-/* Estils globals */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f5f7fa;
     color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .container {
     max-width: 400px;
     width: 100%;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     text-align: center;
-
 }
 
 h2 {
@@ -49,7 +41,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Estils per als formularis */
 .form-container {
     margin-bottom: 20px;
     height: 295px;
@@ -60,6 +51,7 @@ label {
     font-size: 0.9em;
     margin-bottom: 5px;
     text-align: left;
+    color: #555;
 }
 
 input[type="text"],
@@ -72,10 +64,15 @@ input[type="password"] {
     font-size: 0.9em;
 }
 
+input:focus {
+    border-color: #4facfe;
+    outline: none;
+}
+
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #4facfe;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -85,7 +82,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #00f2fe;
 }
 
 span {
@@ -95,16 +92,14 @@ span {
     color: #666;
 }
 
-/* Botó de tancar sessió */
 #close-session {
-    background-color: #dc3545;
+    background-color: #ff5a5f;
 }
 
 #close-session:hover {
-    background-color: #a71d2a;
+    background-color: #ff7b6b;
 }
 
-/* Missatges d'estat */
 #login-form span,
 #register-form span {
     font-size: 0.9em;
