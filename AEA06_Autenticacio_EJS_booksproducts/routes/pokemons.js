@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     const data = readData();
     const user = { name: "Guillermo" };
     const htmlMessage = `<a href="/">Home</a>`;
-    res.render("pokemon", { user, data, htmlMessage });
+    res.render("pokemon", { user, data, htmlMessage });//hay que modificar todos los renders
 });
 
 
